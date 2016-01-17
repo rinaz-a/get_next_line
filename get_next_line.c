@@ -5,14 +5,14 @@
 ** Login   <rinaz_a@epitech.net>
 ** 
 ** Started on  Wed Jan 13 20:48:37 2016 selim rinaz
-** Last update Sun Jan 17 01:18:18 2016 
+** Last update Sun Jan 17 01:24:07 2016 
 */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "get_next_line.h"
 
-char		*my_alloc(char *buf, char *line, int idx, int pos)
+char		*alloc(int idx, int pos, char *buf, char *line)
 {
   char		*new_line;
   int		i;
@@ -53,7 +53,7 @@ char			*get_next_line(const int fd)
       if ((data.idx == 0) && ((data.ret = read(fd, data.buf, READ_SIZE)) < 1))
 	return (NULL);
       if (((data.buf[data.idx] == '\n') || (data.idx == (data.ret - 1)))
-	  && ((tmp.line = my_alloc(data.buf, tmp.line, data.idx, tmp.pos)) == NULL))
+	 && ((tmp.line = alloc(data.idx, tmp.pos, data.buf, tmp.line)) == NULL))
 	return (NULL);
       if ((data.buf[data.idx] == '\n')
 	  || ((data.ret < READ_SIZE) && (data.idx == (data.ret - 1))))

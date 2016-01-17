@@ -5,7 +5,7 @@
 ** Login   <rinaz_a@epitech.net>
 ** 
 ** Started on  Wed Jan 13 20:48:57 2016 selim rinaz
-** Last update Sun Jan 17 01:16:02 2016 
+** Last update Sun Jan 17 01:23:23 2016 
 */
 
 #ifndef GET_NEXT_LINE_H_
@@ -30,6 +30,6 @@ typedef struct	s_tmp
 }		t_tmp;
 
 char		*get_next_line(const int fd);
-char		*my_alloc(char *buf, char *line, int idx, int pos);
+char		*alloc(int idx, int pos, char *buf, char *line);
 
 #endif /* !GET_NEXT_LINE_H_ */
