@@ -5,7 +5,7 @@
 ** Login   <rinaz_a@epitech.net>
 ** 
 ** Started on  Wed Jan 13 20:48:37 2016 selim rinaz
-** Last update Sun Jan 17 01:24:07 2016 
+** Last update Sun Jan 17 01:52:30 2016 
 */
 
 #include <stdlib.h>
@@ -20,7 +20,7 @@ char		*alloc(int idx, int pos, char *buf, char *line)
   i = 0;
   while ((line != NULL) && (line[i] != 0))
     i = i + 1;
-  if ((new_line = malloc(i + ((idx + 1) - pos) + 1)) == NULL)
+  if ((new_line = malloc(i + (idx - pos) + 2)) == NULL)
     return (NULL);
   i = 0;
   while ((line != NULL) && (line[i] != 0) && (i = i + 1))
