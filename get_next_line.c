@@ -5,7 +5,7 @@
 ** Login   <rinaz_a@epitech.net>
 ** 
 ** Started on  Wed Jan 13 20:48:37 2016 selim rinaz
-** Last update Sun Jan 17 01:16:51 2016 
+** Last update Sun Jan 17 01:18:18 2016 
 */
 
 #include <stdlib.h>
@@ -58,13 +58,13 @@ char			*get_next_line(const int fd)
       if ((data.buf[data.idx] == '\n')
 	  || ((data.ret < READ_SIZE) && (data.idx == (data.ret - 1))))
 	tmp.kill = 1;
-      if (data.idx == (data.ret - 1))
+      if (data.idx != (data.ret - 1))
+	data.idx = data.idx + 1;
+      else
 	{
 	  data.idx = 0;
 	  tmp.pos = 0;
 	}
-      else
-	data.idx = data.idx + 1;
     }
   return (tmp.line);
 }
